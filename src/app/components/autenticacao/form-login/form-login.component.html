@@ -1,0 +1,13 @@
+<mat-toolbar class="navbar">
+
+  <button mat-button [routerLink]="'/chat'">
+    <span>Chat</span>
+  </button>
+
+  <span class="spacer"></span>
+
+</mat-toolbar>
+<div class="login-container">
+    <app-form [formConfig]="formConfig" [submitCallback]="onSubmit.bind(this)"></app-form>
+</div>
+

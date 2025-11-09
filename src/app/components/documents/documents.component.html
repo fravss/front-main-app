@@ -1,0 +1,31 @@
+<app-navbar></app-navbar>
+<div class="form-container">
+
+
+  <h3>Upload de Documentos</h3>
+
+
+  <input type="file" #fileInput (change)="onFileSelected($event)" multiple hidden>
+
+
+  <button  mat-flat-button  (click)="fileInput.click()">
+    Selecionar Arquivos
+  </button>
+
+  <mat-list *ngIf="files.length > 0">
+    <mat-list-item *ngFor="let file of files">
+      <mat-icon matListIcon>description</mat-icon>
+      <span>{{ file.name }}</span>
+      <button mat-icon-button color="green" (click)="removeFile(file)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-list-item>
+  </mat-list>
+
+  <button  mat-flat-button 
+          (click)="uploadFiles()" 
+          [disabled]="files.length === 0">
+    Upload
+  </button>
+
+</div>

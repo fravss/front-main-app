@@ -1,0 +1,98 @@
+@use  '../../../../assets/styles/colors.scss' as cores;
+@use 'sass:color';
+
+
+.table-container{
+    background-color: white;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.25),  
+            0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    border-radius: 20px;
+    width: 90%; 
+    max-width:1850px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 20px auto 0;
+
+    outline: 2px solid rgba(0, 0, 0, 0.05);
+
+    .table-header {
+      display: flex;
+      justify-content:flex-start;
+      align-items: center;
+      gap: 20px;
+
+      .table-name {
+        color:rgb(46, 46, 46);
+        font-size: 30px;
+        font-weight:400;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      mat-form-field {
+        margin-top: 20px;
+        
+      }
+    }
+
+    table {
+      width: 100%;
+      border-radius: 12px; 
+      overflow: hidden;
+      th {
+          padding: 12px;
+          background-color: cores.$dark-color2;    
+          text-align: center;        
+      }   
+      td {
+        text-align: center;
+      } 
+
+      .first-cell {
+        font-weight: bold;
+      }
+      .odd-row {
+        background-color: cores.$light-color;
+            
+      }
+      
+      .even-row {
+        background-color: white;
+
+       
+      }
+      .action-button-odd {
+        background-color: cores.$light-dark-color;
+        color: white;
+        border: none;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.108);
+
+        &:hover {
+          background-color: color.scale(cores.$light-dark-color, $lightness: -25%);
+
+        }
+      }
+      
+      .action-button-even {
+        background-color: cores.$light-color; 
+        color: cores.$dark-color;
+        border: none;
+        box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.108);
+
+        &:hover {
+          background-color: color.scale(cores.$light-color, $lightness: -10%);
+        }
+      }
+  }    
+
+    button {
+        margin-right: 8px;
+        mat-icon {
+          margin: 0;
+          padding: 0; 
+        }
+      
+    }
+
+   
+}

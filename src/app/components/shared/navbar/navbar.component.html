@@ -1,0 +1,21 @@
+<mat-toolbar class="navbar">
+
+  <button mat-button [matMenuTriggerFor]="denunciaMenu">
+    <mat-icon>report</mat-icon>
+    <span>Documentos</span>
+    <mat-menu #denunciaMenu="matMenu">
+      <button mat-menu-item [routerLink]="'/up'">
+        <span>Documentos</span>
+      </button>
+        <button mat-menu-item [routerLink]="'/home'">
+        <span>Home</span>
+      </button>
+    </mat-menu>
+  </button>
+  <span class="spacer"></span>
+
+  <button mat-button  (click)="logout()" class="logout-button">
+    <span>Logout</span>
+  </button>
+
+</mat-toolbar>
